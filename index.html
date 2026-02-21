@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- ✅ Important for Mobile Full Screen -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Happy Birthday 🎂</title>
 
     <style>
@@ -22,7 +19,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 100vh;
         }
 
         h1 {
@@ -54,7 +50,6 @@
         p {
             font-size: 22px;
             margin-top: 20px;
-            padding: 0 20px;
         }
 
         input {
@@ -63,7 +58,6 @@
             border: none;
             font-size: 16px;
             text-align: center;
-            outline: none;
         }
 
         button {
@@ -86,6 +80,7 @@
             to { text-shadow: 0 0 30px yellow; }
         }
 
+        /* Smooth Shining Animation */
         @keyframes shine {
             0% { background-position: 200% center; }
             100% { background-position: -200% center; }
@@ -115,39 +110,13 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(-120vh); }
         }
-
-        /* 📱 Mobile Responsive */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 35px;
-                margin-top: 40px;
-            }
-
-            #nameDisplay {
-                font-size: 40px;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            input {
-                width: 80%;
-                margin-top: 15px;
-            }
-
-            button {
-                margin-top: 10px;
-                margin-left: 0;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- Background Music (May require tap on mobile) -->
-    <audio id="bgMusic" loop>
+    <!-- Background Music -->
+    <audio autoplay loop>
         <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mp3">
     </audio>
 
@@ -169,14 +138,11 @@
                 document.getElementById("nameDisplay").innerHTML = name + " 💖✨";
                 document.getElementById("message").innerHTML =
                     "You are my best friend, my happiness, and my forever partner in crime! 🎉💞 May this year bring you endless joy and success!";
-
-                // Play music after button click (works better on mobile)
-                document.getElementById("bgMusic").play();
             }
         }
 
         // Create balloons
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 15; i++) {
             let balloon = document.createElement("div");
             balloon.className = "balloon";
             balloon.style.left = Math.random() * 100 + "vw";
